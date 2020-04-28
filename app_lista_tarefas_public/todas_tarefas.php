@@ -112,10 +112,9 @@
 										<div class="col-sm-3 mt-2 d-flex justify-content-between">
 											<i class="fas fa-trash-alt fa-lg text-danger" onclick="to_delete(<?= $assignment->id ?>)"></i>
 
-											<? if($assignment->status == 'pendente') { ?> 
-												<i class="fas fa-edit fa-lg text-info" onclick="to_edit(<?= $assignment->id ?>, '<?= $assignment->assignment?>')"></i>
-												<i class="fas fa-check-square fa-lg text-success" onclick="brand_realized(<?= $assignment->id ?>)"></i>
-											<? }?>
+											<i class="fas fa-edit fa-lg text-info" onclick="to_edit(<?= $assignment->id ?>, '<?= $assignment->assignment?>')"></i>
+											<i class="fas fa-check-square fa-lg text-success" onclick="brand_realized(<?= $assignment->id ?>)"></i>
+											
 										</div>
 									
 									</div>

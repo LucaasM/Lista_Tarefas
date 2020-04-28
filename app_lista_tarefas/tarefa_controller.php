@@ -35,8 +35,12 @@
  
         $assignment->__set('assignment', $_POST['assignment'])->__set('id', $_POST['id']);
         
-
-        header('location: todas_tarefas.php?update=1');
+        if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
+            header('location: index.php');
+        } else {
+            header('location: todas_tarefas.php?update=1');
+        }
+        
 
       
          
@@ -51,7 +55,12 @@
 
             $assignmentService = new AssignmentService($connection, $assignment);
             $assignmentService->to_remove();
-            header('location: todas_tarefas.php?remove=1');
+            if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
+                header('location: index.php');
+            } else {
+                header('location: todas_tarefas.php?remove=1');
+            }
+            
         } else if($action == 'brand_realized'){
             $assignment = new Assignment();
             $connection = new Connection();
@@ -61,7 +70,13 @@
             $assignmentService = new AssignmentService($connection, $assignment);
             $assignmentService->brand_realized();
 
-            header('location: todas_tarefas.php');
+            if(isset($_GET['pag']) && $_GET['pag'] == 'index'){
+                header('location: index.php');
+            } else {
+                header('location: todas_tarefas.php');
+            }
+
+            
         } else if($action == 'pendentes'){
             $assignment = new Assignment();
             $connection = new Connection();
